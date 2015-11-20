@@ -5,6 +5,10 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 """
+OpenCV Samples e.g.: /usr/local/share/OpenCV/samples/python2/watershed.py
+"""
+
+"""
 for filepath in glob.glob("images/*.JPG"):
 
     filename = filepath.split("/")[1]
@@ -25,17 +29,18 @@ for filepath in glob.glob("images/*.JPG"):
     plt.savefig("output/cannyedge/" + filename)
     # plt.show()
 """
+print cv2.__version__
 
 # Input file
-filepath = "images/IMG_2655_1.JPG"
+filepath = "images/IMG_2655.JPG"
 filename = filepath.split("/")[1]
 filename = filename.replace(".JPG", ".jpg")
 
 # Get input image in gray scale
-gray = cv2.imread(filepath, 0)
-
+img = cv2.imread(filepath)
+# gray = cv2.imread(filepath, 0)
 # Get a gray scale
-# gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 # TODO: Do some image transformation to remove the edges to just focus on
 # the temperature gradients
@@ -43,18 +48,14 @@ gray = cv2.imread(filepath, 0)
 """
 Sift features
 """
-sift = cv2.SIFT()
+sift = cv2.xfeatures2d.SIFT_create()
 
-# kp = sift.detect(gray, None)
-# img = cv2.drawKeypoints(gray, kp)
-
-kp, des = sift.detectAndCompute(gray, None)
+kp = sift.detect(gray, None)
 img = cv2.drawKeypoints(gray, kp)
 
 cv2.imwrite('sift_keypoints_2655_temp1.jpg', img)
 cv2.imshow('test image', img)
 
-sys.exit(0)
 
 """
 Using Watershed image segmentation algorithm
@@ -70,7 +71,7 @@ opening = cv2.morphologyEx(thresh, cv2.MORPH_OPEN, kernel, iterations=2)
 sure_bg = cv2.dilate(opening, kernel, iterations=3)
 
 # Finding sure foreground area
-dist_transform = cv2.distanceTransform(opening, cv2.cv.CV_DIST_L2, 5)
+dist_transform = cv2.distanceTransform(opening, cv2.DIST_L2, 5)
 ret, sure_fg = cv2.threshold(
     dist_transform, 0.7 * dist_transform.max(), 255, 0)
 

@@ -1,0 +1,137 @@
+cmake -D CMAKE_BUILD_TYPE=RELEASE \
+	  -D CMAKE_INSTALL_PREFIX=/usr/local \
+      -D BUILD_PYTHON_SUPPORT=ON \
+      -D PYTHON2_PACKAGES_PATH=/Users/manaswi/anaconda/lib/python2.7/site-packages \
+	  -D INSTALL_C_EXAMPLES=ON -D INSTALL_PYTHON_EXAMPLES=ON \
+	  -D BUILD_EXAMPLES=ON \
+      -D WITH_XINE=ON \
+      -D WITH_OPENGL=ON \
+      -D WITH_TBB=ON \
+      -D BUILD_NEW_PYTHON_SUPPORT=ON \
+      -D WITH_V4L=ON \
+      -D CMAKE_BUILD_TYPE=RELEASE 
+	  
+	  -D OPENCV_EXTRA_MODULES_PATH=~/git/opencv_contrib/modules ..
+
+
+-- General configuration for OpenCV 3.0.0 =====================================
+--   Version control:               3.0.0
+-- 
+--   Platform:
+--     Host:                        Darwin 15.0.0 x86_64
+--     CMake:                       3.3.0
+--     CMake generator:             Unix Makefiles
+--     CMake build tool:            /usr/bin/make
+--     Configuration:               RELEASE
+-- 
+--   C/C++:
+--     Built as dynamic libs?:      YES
+--     C++ Compiler:                /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  (ver 7.0.0.7000176)
+--     C++ flags (Release):         -fsigned-char -W -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -Qunused-arguments -Wno-semicolon-before-method-body -fno-omit-frame-pointer -msse -msse2 -mno-avx -msse3 -mno-ssse3 -mno-sse4.1 -mno-sse4.2 -fvisibility=hidden -fvisibility-inlines-hidden -O3 -DNDEBUG  -DNDEBUG
+--     C++ flags (Debug):           -fsigned-char -W -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -Qunused-arguments -Wno-semicolon-before-method-body -fno-omit-frame-pointer -msse -msse2 -mno-avx -msse3 -mno-ssse3 -mno-sse4.1 -mno-sse4.2 -fvisibility=hidden -fvisibility-inlines-hidden -g  -O0 -DDEBUG -D_DEBUG
+--     C Compiler:                  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc
+--     C flags (Release):           -fsigned-char -W -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -Qunused-arguments -Wno-semicolon-before-method-body -fno-omit-frame-pointer -msse -msse2 -mno-avx -msse3 -mno-ssse3 -mno-sse4.1 -mno-sse4.2 -fvisibility=hidden -fvisibility-inlines-hidden -O3 -DNDEBUG  -DNDEBUG
+--     C flags (Debug):             -fsigned-char -W -Werror=return-type -Werror=non-virtual-dtor -Werror=address -Werror=sequence-point -Wformat -Werror=format-security -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wundef -Winit-self -Wpointer-arith -Wshadow -Wsign-promo -Wno-narrowing -Wno-delete-non-virtual-dtor -Wno-unnamed-type-template-args -fdiagnostics-show-option -Wno-long-long -Qunused-arguments -Wno-semicolon-before-method-body -fno-omit-frame-pointer -msse -msse2 -mno-avx -msse3 -mno-ssse3 -mno-sse4.1 -mno-sse4.2 -fvisibility=hidden -fvisibility-inlines-hidden -g  -O0 -DDEBUG -D_DEBUG
+--     Linker flags (Release):
+--     Linker flags (Debug):
+--     Precompiled headers:         NO
+--     Extra dependencies:          /Users/manaswi/anaconda/lib/libQtOpenGL.dylib /Users/manaswi/anaconda/lib/libQtGui.dylib /Users/manaswi/anaconda/lib/libQtTest.dylib /Users/manaswi/anaconda/lib/libQtCore.dylib -framework QTKit -framework QuartzCore -framework AppKit /System/Library/Frameworks/AGL.framework /System/Library/Frameworks/OpenGL.framework libtbb.dylib
+--     3rdparty dependencies:       libjpeg libwebp libpng libtiff libjasper IlmImf zlib ippicv
+-- 
+--   OpenCV modules:
+--     To be built:                 hal core flann imgproc ml photo video imgcodecs shape videoio highgui objdetect superres ts features2d calib3d java stitching videostab python2
+--     Disabled:                    world
+--     Disabled by dependency:      -
+--     Unavailable:                 cudaarithm cudabgsegm cudacodec cudafeatures2d cudafilters cudaimgproc cudalegacy cudaobjdetect cudaoptflow cudastereo cudawarping cudev python3 viz
+-- 
+--   GUI: 
+--     QT 4.x:                      YES (ver 4.8.6 EDITION = OpenSource)
+--     QT OpenGL support:           YES (/Users/manaswi/anaconda/lib/libQtOpenGL.dylib)
+--     OpenGL support:              YES (/System/Library/Frameworks/AGL.framework /System/Library/Frameworks/OpenGL.framework)
+--     VTK support:                 NO
+-- 
+--   Media I/O: 
+--     ZLib:                        build (ver 1.2.8)
+--     JPEG:                        build (ver 90)
+--     WEBP:                        build (ver 0.3.1)
+--     PNG:                         build (ver 1.5.12)
+--     TIFF:                        build (ver 42 - 4.0.2)
+--     JPEG 2000:                   build (ver 1.900.1)
+--     OpenEXR:                     build (ver 1.7.1)
+--     GDAL:                        NO
+-- 
+--   Video I/O:
+--     DC1394 1.x:                  NO
+--     DC1394 2.x:                  NO
+--     FFMPEG:                      NO
+--       codec:                     NO
+--       format:                    NO
+--       util:                      NO
+--       swscale:                   NO
+--       resample:                  NO
+--       gentoo-style:              NO
+--     GStreamer:                   NO
+--     OpenNI:                      NO
+--     OpenNI PrimeSensor Modules:  NO
+--     OpenNI2:                     NO
+--     PvAPI:                       NO
+--     GigEVisionSDK:               NO
+--     QuickTime:                   NO
+--     QTKit:                       YES
+--     V4L/V4L2:                    NO/NO
+--     XIMEA:                       NO
+--     gPhoto2:                     NO
+-- 
+--   Other third-party libraries:
+--     Use IPP:                     8.2.1 [8.2.1]
+--          at:                     /Users/manaswi/git/opencv/3rdparty/ippicv/unpack/ippicv_osx
+--     Use IPP Async:               NO
+--     Use Eigen:                   YES (ver 3.2.6)
+--     Use TBB:                     YES (ver 4.4 interface 9000)
+--     Use OpenMP:                  NO
+--     Use GCD                      NO
+--     Use Concurrency              NO
+--     Use C=:                      NO
+--     Use pthreads for parallel for:
+--                                  NO
+--     Use Cuda:                    NO
+--     Use OpenCL:                  NO
+-- 
+--   Python 2:
+--     Interpreter:                 /Users/manaswi/anaconda/bin/python2.7 (ver 2.7.10)
+--     Libraries:                   /usr/lib/libpython2.7.dylib (ver 2.7.10)
+--     numpy:                       /Users/manaswi/anaconda/lib/python2.7/site-packages/numpy/core/include (ver 1.10.1)
+--     packages path:               /Users/manaswi/anaconda/lib/python2.7/site-packages
+-- 
+--   Python 3:
+--     Interpreter:                 NO
+-- 
+--   Python (for build):            /Users/manaswi/anaconda/bin/python2.7
+-- 
+--   Java:
+--     ant:                         /usr/local/bin/ant (ver 1.9.6)
+--     JNI:                         /System/Library/Frameworks/JavaVM.framework/Headers /System/Library/Frameworks/JavaVM.framework/Headers /System/Library/Frameworks/JavaVM.framework/Headers
+--     Java wrappers:               YES
+--     Java tests:                  NO
+-- 
+--   Matlab:
+--     mex:                         /Applications/MATLAB_R2015b.app/bin/mex
+--     Compiler/generator:          Not working (bindings will not be generated)
+-- 
+--   Documentation:
+--     Doxygen:                     NO
+--     PlantUML:                    NO
+-- 
+--   Tests and samples:
+--     Tests:                       NO
+--     Performance tests:           NO
+--     C/C++ Examples:              YES
+-- 
+--   Install path:                  /usr/local
+-- 
+--   cvconfig.h is in:              /Users/manaswi/git/opencv/build
+-- -----------------------------------------------------------------
+-- 
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/manaswi/git/opencv/build
